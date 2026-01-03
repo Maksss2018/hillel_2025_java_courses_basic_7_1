@@ -1,32 +1,5 @@
-public class Main {
-/*
-Створіть Java програму, яка виконує наступні завдання:
-
-    Створіть масив цілих чисел з 20 елементами.
-    Заповніть масив випадковими цілими числами в діапазоні від -100 до 100.
-    Знайдіть та виведіть суму всіх від'ємних чисел в масиві.
-    Знайдіть та виведіть кількість парних і непарних чисел в масиві.
-    Знайдіть найбільший та найменший елементи масиву та їхні індекси.
-    Знайдіть і виведіть середнє арифметичне чисел, розташованих після першого від'ємного числа у масиві (або повідомте, якщо від'ємних чисел немає).
-    Залийте виконаний проект на свій GitHub репозиторій, посилання на який зазначте в LMS.
-
-Приклад:
-
-Елементи масиву: [34, -10, 56, -22, 78, 5, 7, -15, 42, -30, 91, 0, -50, 18, 99, -3, 25, 11, 63, -8]
-
-Сума від'ємних чисел: -138
-
-Кількість парних чисел: 11
-
-Кількість непарних чисел: 9
-
-Найменший елемент: -50 (з індексом 12)
-
-Найбільший елемент: 99 (з індексом 14)
-
-Середнє арифметичне чисел після першого від'ємного числа: 20.39
-* */
-    int[] arrayOfNumbers = {34, -10, 56, -22, 78, 5, 7, -15, 42, -30, 91, 0, -50, 18, 99, -3, 25, 11, 63, -8};
+void main () {
+    int[] arrayOfNumbers = new Random().ints(20, -101, 101).toArray();
     int sumOfnegativeNumbers = 0;//Сума від'ємних чисел
     int numberOfEvenNumbers = 0;//Кількість парних чисел
     int numberOfOddNumbers = 0;//Кількість непарних чисел
@@ -46,7 +19,7 @@ public class Main {
              Найбільший елемент: %d (з індексом %d )
              Середнє арифметичне числа: %.2f
              """;
-     for (int i = 0; i < arrayOfNumbers.length; i++) {
+    for (int i = 0; i < arrayOfNumbers.length; i++) {
 
         if(arrayOfNumbers[i] < 0){
             sumOfnegativeNumbers = sumOfnegativeNumbers + arrayOfNumbers[i];
@@ -72,5 +45,6 @@ public class Main {
         }
     }
     arithmeticMeanOfNumbers = sum/count;
-     System.out.printf(templateForOutput, sumOfnegativeNumbers,numberOfEvenNumbers,numberOfOddNumbers,smallestNumber, indexOfsmallestNumber, bigestNumber, indexOfbigestNumber, arithmeticMeanOfNumbers );
+    IO.println("Array = " + java.util.Arrays.toString(arrayOfNumbers));
+    System.out.printf(templateForOutput, sumOfnegativeNumbers,numberOfEvenNumbers,numberOfOddNumbers,smallestNumber, indexOfsmallestNumber, bigestNumber, indexOfbigestNumber, arithmeticMeanOfNumbers );
 }
